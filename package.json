@@ -1,0 +1,27 @@
+{
+  "name": "expense-tracker-backend",
+  "version": "1.0.0",
+  "description": "This project contains the backend server for the Expense Tracker React App",
+  "main": "index.js",
+  "repository": {
+    "type" : "git",
+    "url": "https://github.com/Bhavyawahie/Expense-Tracker.git"
+  },
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server" 
+  },
+  "author": "Bhavya Wahie",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.13.3",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.12"
+  }
+}
