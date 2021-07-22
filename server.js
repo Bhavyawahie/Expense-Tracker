@@ -3,14 +3,14 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const colors = require('colors');
 const morgan = require('morgan');
-dotenv.config({ path: './config/config.env'})
+
+dotenv.config({ path: './config/config.env'});
+
+const transactions = require("./routes/transactions") 
 
 const app = express();
 
-app.get("/", (req, res) => {
-    res.write("<h1>Aur launde<h1/>")
-    res.send();
-});
+app.use("/api/v1/transactions", transactions);
 
 const PORT = process.env.PORT || 4000
 
