@@ -63,7 +63,7 @@ exports.deleteTransactions =  async (req, res, next) => {
         }
         return res.status(200).json({
             success: true,
-            data: "hogya"
+            data: {}
         })
     }
     catch (err){
