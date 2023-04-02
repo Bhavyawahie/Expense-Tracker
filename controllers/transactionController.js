@@ -3,7 +3,7 @@ const Transaction = require('../models/Transaction')
 //  @desc    Get all Transactions
 //  @Route   GET /api/v1/transactions
 //  access   Public
-exports.getTransactions = async (req, res, next) => {
+const getTransactions = async (req, res, next) => {
     try{
         const transactions = await Transaction.find();
         return res.status(200).json({
@@ -23,10 +23,10 @@ exports.getTransactions = async (req, res, next) => {
 //  @desc    Add all Transactions
 //  @Route   POST /api/v1/transactions
 //  access   Public
-exports.addTransactions = async (req, res, next) => {
+const addTransactions = async (req, res, next) => {
     try {
         const { text, amount } =  req.body;
-        const transaction = await Transaction.create(req.body);
+        const transaction = await Transaction.create({text, amount});
         return res.status(201).json({
             success: true,
             data: transaction
@@ -52,7 +52,7 @@ exports.addTransactions = async (req, res, next) => {
 //  @desc    Delete a Transaction
 //  @Route   DELETE /api/v1/transactions/:id
 //  access   Public
-exports.deleteTransactions =  async (req, res, next) => {
+const deleteTransactions =  async (req, res, next) => {
     try {
         const transaction = await Transaction.findByIdAndDelete(req.params.id)
         if(!transaction) {
@@ -72,4 +72,10 @@ exports.deleteTransactions =  async (req, res, next) => {
             error: "Server Error"
         })
     }
+}
+
+module.exports = {
+    getTransactions,
+    addTransactions,
+    deleteTransactions
 }
