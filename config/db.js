@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
 const connectDB = async () => {
     try{
@@ -6,9 +6,9 @@ const connectDB = async () => {
             useNewUrlParser: true, 
             useCreateIndex: true, 
             useUnifiedTopology: true
-        });
+        })
 
-        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold);
+        console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline.bold)
     }
     catch (err) {
         console.log(`Error ${err.message}`.red);
