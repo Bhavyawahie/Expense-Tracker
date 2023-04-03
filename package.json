@@ -12,7 +12,7 @@
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "build": "netlify build"
+    "build": "netlify deploy --prod"
   },
   "author": "Bhavya Wahie",
   "license": "MIT",
