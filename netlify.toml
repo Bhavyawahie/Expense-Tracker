@@ -1,6 +1,9 @@
 [build]
     functions = "functions/"
 
+[functions]
+  region = "ap-south-1"    
+
 [[redirects]]
   from = "/*"
   to = "/.netlify/functions/api/:splat"
